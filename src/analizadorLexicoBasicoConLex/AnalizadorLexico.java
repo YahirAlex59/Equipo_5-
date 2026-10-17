@@ -60,6 +60,17 @@ public class AnalizadorLexico {
                     else if (c == ' ') estado = 7;
                     else return false;
                     break;
+
+                case 8:
+                    if (c == '}') estado = 9;
+                    else estado = 8;
+                    break;
+
+                case 9:
+                    if (c == ' ') estado = 9;
+                    else if (c == '{') estado = 8;
+                    else return false;
+                    break;
             }
         }
 
