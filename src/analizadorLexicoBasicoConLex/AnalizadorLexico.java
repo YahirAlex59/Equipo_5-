@@ -80,6 +80,19 @@ public class AnalizadorLexico {
     }
 
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Analizador de funciones");
+        System.out.println("Ingrese la funcion a evaluar: ");
+        String entrada = scanner.nextLine();
+
+        if (validarFuncionAFD(entrada)) {
+            System.out.println("\n: La funcion esta CORRECTAMENTE escrita.");
+        } else {
+            System.out.println("\n: ERROR. La funcion NO cumple con la sintaxis del AFD.");
+        }
+
+        scanner.close();
 
 
     }
