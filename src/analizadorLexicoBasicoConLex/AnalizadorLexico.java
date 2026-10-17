@@ -1,4 +1,4 @@
-package analizadorLexicoBasicoConLex;
+
 import java.util.Scanner;
 
 public class AnalizadorLexico {
@@ -34,6 +34,19 @@ public class AnalizadorLexico {
                 case 4:
                     if (c == '_') estado = 5;
                     else return false;
+                    break;
+
+                case 5:
+                    if (Character.isLetterOrDigit(c) || c == '_') {
+                        estado = 5;
+                        TieneNombre = true;
+                    } else if (c == ' ' && !TieneNombre) {
+                        estado = 5;
+                    } else if (c == '(' && TieneNombre) {
+                        estado = 6;
+                    } else {
+                        return false;
+                    }
                     break;
             }
         }
