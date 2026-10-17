@@ -48,6 +48,18 @@ public class AnalizadorLexico {
                         return false;
                     }
                     break;
+
+                case 6:
+                    if (c == ')') estado = 7;
+                    else if (Character.isLetterOrDigit(c) || c == ' ' || c == ',' || c == '_') estado = 6;
+                    else return false;
+                    break;
+
+                case 7:
+                    if (c == '{') estado = 8;
+                    else if (c == ' ') estado = 7;
+                    else return false;
+                    break;
             }
         }
 
