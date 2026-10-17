@@ -86,9 +86,9 @@ public class AnalizadorLexico {
         String entrada = scanner.nextLine();
 
         if (validadorFuncion(entrada)) {
-            System.out.println("\n: La funcion esta CORRECTAMENTE escrita.");
+            System.out.println("\nLa funcion esta CORRECTAMENTE escrita.");
         } else {
-            System.out.println("\n:La funcion NO cumple con la sintaxis Error");
+            System.out.println("\nLa funcion NO cumple con la sintaxis Error");
         }
 
         scanner.close();
