@@ -2,8 +2,9 @@
 import java.util.Scanner;
 
 public class AnalizadorLexico {
-    public static boolean validadorFuncion (String cadena) {
+    public static boolean validadorFuncion(String cadena) {
         int estado = 0;
+
         boolean TieneNombre = false;
 
         for (int i = 0; i < cadena.length(); i++) {
@@ -75,25 +76,21 @@ public class AnalizadorLexico {
         }
 
         return estado == 9;
-
-        }
     }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Analizador de funciones");
+        System.out.println("---Analizador de funciones---");
         System.out.println("Ingrese la funcion a evaluar: ");
         String entrada = scanner.nextLine();
 
-        if (validarFuncionAFD(entrada)) {
+        if (validadorFuncion(entrada)) {
             System.out.println("\n: La funcion esta CORRECTAMENTE escrita.");
         } else {
-            System.out.println("\n: ERROR. La funcion NO cumple con la sintaxis del AFD.");
+            System.out.println("\n:La funcion NO cumple con la sintaxis Error");
         }
 
         scanner.close();
-
-
     }
-
+}
